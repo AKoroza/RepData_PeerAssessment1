@@ -13,7 +13,7 @@ Make plots visible in md file
 ```{r global_options}
 knitr::opts_chunk$set(fig.path='Figs/')
 ```
-```
+
 
 ## Data cleaning and preparin for analyses
 check directory and read in activity data
