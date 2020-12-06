@@ -1,11 +1,20 @@
 ---
-title: "PA1_template"
+title: "Reproducible Research:Peer Assessment 1"
 author: "Aleks"
 date: "12/6/2020"
-output: html_document
+output: 
+  html_document:
+    keep_md: true
 ---
 
 ### Reproducible research assignment 
+Make plots visible in md file
+
+```{r global_options}
+knitr::opts_chunk$set(fig.path='Figs/')
+```
+```
+
 ## Data cleaning and preparin for analyses
 check directory and read in activity data
 
