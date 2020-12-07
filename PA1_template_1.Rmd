@@ -151,6 +151,7 @@ plot(x = strptime(steps_per_interval$hhmm, format('%H%M')),
 
 ![](average steps taken over a day.png)
 
+
 What was the maximum number of steps per day?
 
 The maximum number of steps was:
