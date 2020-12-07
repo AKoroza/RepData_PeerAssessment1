@@ -8,13 +8,33 @@ output:
 ---
 
 ### Reproducible research assignment 
-Make plots visible in md file
+
+Load necessary packages
 
 
 ```r
-knitr::opts_chunk$set(fig.path='Figs/')
+library(knitr)
+opts_chunk$set(echo =TRUE)
+library(dplyr)
 ```
+
 ```
+## 
+## Attaching package: 'dplyr'
+```
+
+```
+## The following objects are masked from 'package:stats':
+## 
+##     filter, lag
+```
+
+```
+## The following objects are masked from 'package:base':
+## 
+##     intersect, setdiff, setequal, union
+```
+
 
 ## Data cleaning and preparin for analyses
 check directory and read in activity data
@@ -162,13 +182,13 @@ head(steps_per_day)
 ```
 
 Lets plot the results using histogram
-
+![](histogram_steps_day_activity.png)
 
 ```r
 hist(steps_per_day$steps, xlab="Steps count per day", main="Histogram of steps count per day")
 ```
 
-![](Figs/unnamed-chunk-11-1.png)<!-- -->
+![](PA1_template_1_files/figure-html/unnamed-chunk-12-1.png)<!-- -->
 
 ## Mean and median number of steps per day
 
@@ -181,20 +201,12 @@ median_steps_per_day<-median(steps_per_day$steps, na.rm = TRUE)
 The mean number of steps was 
 
 
-```r
-mean_steps_per_day
-```
-
 ```
 ## [1] 10766.19
 ```
 
 The median number of steps was
 
-
-```r
-median_steps_per_day
-```
 
 ```
 ## [1] 10765
@@ -230,7 +242,7 @@ head(steps_per_interval)
 ```
 
 Plot average number of steps 
-
+![](average steps taken over a day.png)
 
 ```r
 plot(x = strptime(steps_per_interval$hhmm, format('%H%M')), 
@@ -241,7 +253,7 @@ plot(x = strptime(steps_per_interval$hhmm, format('%H%M')),
      ylab="Number of steps")
 ```
 
-![](Figs/unnamed-chunk-16-1.png)<!-- -->
+![](PA1_template_1_files/figure-html/unnamed-chunk-17-1.png)<!-- -->
 
 What was the maximum number of steps per day?
 
@@ -363,7 +375,7 @@ head(steps_per_day2)
 ```
 
 Histogram of steps per day based on activity2
-
+![](Histogram of steps per day_noNA.png)
 
 ```r
 hist(steps_per_day2$steps, 
@@ -371,7 +383,7 @@ hist(steps_per_day2$steps,
      main = "Histogram of number of steps taken in a day with no-NA data set")
 ```
 
-![](Figs/unnamed-chunk-25-1.png)<!-- -->
+![](PA1_template_1_files/figure-html/unnamed-chunk-26-1.png)<!-- -->
 
 What is a mean and median number of steps in activity2
 
@@ -456,7 +468,7 @@ summary(weekend_steps_per_interval)
 ```
 
 Plot the weekend and weekday average activity in a panel plot
-
+![](weekdays_weekends_time.png)
 
 ```r
 par(mfrow=c(2,1))
@@ -478,7 +490,7 @@ plot(x = strptime(weekend_steps_per_interval$hhmm, format('%H%M')),
      ylim=c(0,250))
 ```
 
-![](Figs/unnamed-chunk-29-1.png)<!-- -->
+![](PA1_template_1_files/figure-html/unnamed-chunk-30-1.png)<!-- -->
 
 There was small difference between step count between weekdays and weekends. The activity (number of steps) was higher during evening hours at the weekends but during weekdays the activity started before 8 am. Variations in activity was stable during weekends at 13:00-14:00 while during weekdays the activity during those hours dropped. Although there were differences in activity during weekdays and weekends, during all days of week the peak of step number was around 8am. 
 
