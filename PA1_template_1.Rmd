@@ -8,10 +8,13 @@ output:
 ---
 
 ### Reproducible research assignment 
-Make plots visible in md file
 
-```{r global_options}
-knitr::opts_chunk$set(fig.path='Figs/')
+Load necessary packages
+
+```{r}
+library(knitr)
+opts_chunk$set(echo =TRUE)
+library(dplyr)
 ```
 
 
@@ -105,6 +108,8 @@ hist(steps_per_day$steps, xlab="Steps count per day", main="Histogram of steps c
 
 ```
 
+![](histogram_steps_day_activity.png)
+
 ## Mean and median number of steps per day
 
 ```{r}
@@ -114,13 +119,13 @@ median_steps_per_day<-median(steps_per_day$steps, na.rm = TRUE)
 
 The mean number of steps was 
 
-```{r}
+```{r,echo=FALSE}
 mean_steps_per_day
 ```
 
 The median number of steps was
 
-```{r}
+```{r,echo=FALSE}
 median_steps_per_day
 ```
 
@@ -143,6 +148,8 @@ plot(x = strptime(steps_per_interval$hhmm, format('%H%M')),
      xlab="Time of day (hh:mm)",
      ylab="Number of steps")
 ```
+
+![](average steps taken over a day.png)
 
 What was the maximum number of steps per day?
 
@@ -227,6 +234,8 @@ hist(steps_per_day2$steps,
 
 ```
 
+![](Histogram of steps per day_noNA.png)
+
 What is a mean and median number of steps in activity2
 
 ```{r}
@@ -287,6 +296,8 @@ plot(x = strptime(weekend_steps_per_interval$hhmm, format('%H%M')),
      ylim=c(0,250))
 
 ```
+
+![](weekdays_weekends_time.png)
 
 There was small difference between step count between weekdays and weekends. The activity (number of steps) was higher during evening hours at the weekends but during weekdays the activity started before 8 am. Variations in activity was stable during weekends at 13:00-14:00 while during weekdays the activity during those hours dropped. Although there were differences in activity during weekdays and weekends, during all days of week the peak of step number was around 8am. 
 
