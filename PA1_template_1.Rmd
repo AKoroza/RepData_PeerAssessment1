@@ -253,7 +253,7 @@ median_steps_per_day2
 Calculate 5-minute interval of the number of steps taken-->
 calculate number of steps every 5 minutes during week and weekend
 
-weekdays
+weekdays 
 
 ```{r}
 weekday_steps_per_interval <- activity %>% 
