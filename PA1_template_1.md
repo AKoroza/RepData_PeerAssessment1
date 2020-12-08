@@ -188,8 +188,6 @@ Lets plot the results using histogram
 hist(steps_per_day$steps, xlab="Steps count per day", main="Histogram of steps count per day")
 ```
 
-![](PA1_template_1_files/figure-html/unnamed-chunk-12-1.png)<!-- -->
-
 ![](histogram_steps_day_activity.png)
 
 ## Mean and median number of steps per day
@@ -255,9 +253,8 @@ plot(x = strptime(steps_per_interval$hhmm, format('%H%M')),
      ylab="Number of steps")
 ```
 
-![](PA1_template_1_files/figure-html/unnamed-chunk-17-1.png)<!-- -->
+![](average_steps.png)
 
-![](average steps taken over a day.png)
 
 What was the maximum number of steps per day?
 
@@ -387,9 +384,7 @@ hist(steps_per_day2$steps,
      main = "Histogram of number of steps taken in a day with no-NA data set")
 ```
 
-![](PA1_template_1_files/figure-html/unnamed-chunk-26-1.png)<!-- -->
-
-![](Histogram of steps per day_noNA.png)
+![](number_steps_noNA.png)
 
 What is a mean and median number of steps in activity2
 
@@ -417,7 +412,7 @@ median_steps_per_day2
 Calculate 5-minute interval of the number of steps taken-->
 calculate number of steps every 5 minutes during week and weekend
 
-weekdays
+weekdays 
 
 
 ```r
@@ -495,8 +490,6 @@ plot(x = strptime(weekend_steps_per_interval$hhmm, format('%H%M')),
      ylab="Number of steps",
      ylim=c(0,250))
 ```
-
-![](PA1_template_1_files/figure-html/unnamed-chunk-30-1.png)<!-- -->
 
 ![](weekdays_weekends_time.png)
 
